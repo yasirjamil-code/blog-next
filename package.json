@@ -1,0 +1,33 @@
+{
+  "name": "resume-project",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@auth/prisma-adapter": "^2.7.4",
+    "@emailjs/browser": "^3.4.0",
+    "@prisma/client": "^5.22.0",
+    "axios": "^1.7.7",
+    "bcryptjs": "^2.4.3",
+    "git-filter-repo": "^0.0.30",
+    "mongodb": "^6.9.0",
+    "mongoose": "^8.7.1",
+    "next": "14.2.15",
+    "next-auth": "^4.24.8",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-hook-form": "^7.53.1",
+    "react-toastify": "^8.1.0",
+    "uuid": "^10.0.0"
+  },
+  "devDependencies": {
+    "postcss": "^8",
+    "prisma": "^5.22.0",
+    "tailwindcss": "^3.4.1"
+  }
+}
