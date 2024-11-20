@@ -89,7 +89,7 @@ const AddBlog = () => {
           <p className="text-2xl font-bold">Upload Blog Image</p>
           <label htmlFor="blogImage" className="cursor-pointer">
             <Image
-              className="mt-4 object-cover object-center w-24"
+              className="mt-4 object-cover object-center w-24 dark:invert-0"
               width={270}
               height={70}
               alt="Upload Area"
@@ -106,7 +106,7 @@ const AddBlog = () => {
             />
           </label>
         </div>
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 dark:bg-[#0F0F0F] dark:text-[#eee]">
           <p className="text-2xl font-bold">Select Category</p>
           <select
             value={data.postCategory}
@@ -119,7 +119,7 @@ const AddBlog = () => {
             <option value="UI-UX">UI-UX</option>
           </select>
         </div>
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 dark:bg-[#0F0F0F] text-[#eee]">
           <p className="text-2xl font-bold">Select Blog Author </p>
           <select
             value={data.author}
