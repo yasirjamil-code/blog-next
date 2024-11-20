@@ -87,7 +87,7 @@ const AddService = () => {
         </div>
 
         {/* Service Category */}
-        <div className="flex flex-col gap-4 ">
+        <div className="flex flex-col gap-4 *:dark:bg-[#0F0F0F] *:text-[#eee]">
           <p className="text-2xl font-bold">Service Category</p>
           <select
             value={data.serviceCategory}
@@ -135,11 +135,11 @@ const AddService = () => {
         </div>
 
         {/* Upload Service Image */}
-        <div>
+        <div className="">
           <p className="text-2xl font-bold">Upload Service Image</p>
-          <label htmlFor="serviceImage" className="cursor-pointer">
+          <label htmlFor="serviceImage" className="cursor-pointer ">
             <Image
-              className="mt-4 object-cover object-center w-24"
+              className="mt-4 object-cover object-center w-24 invert  border-4 border-gray-400"
               width={270}
               height={70}
               alt="Upload Area"

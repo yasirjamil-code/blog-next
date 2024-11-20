@@ -89,7 +89,7 @@ const AddBlog = () => {
           <p className="text-2xl font-bold">Upload Blog Image</p>
           <label htmlFor="blogImage" className="cursor-pointer">
             <Image
-              className="mt-4 object-cover object-center w-24 dark:invert-0"
+              className="mt-4 object-cover object-center w-24 invert  border-4 border-gray-400"
               width={270}
               height={70}
               alt="Upload Area"
