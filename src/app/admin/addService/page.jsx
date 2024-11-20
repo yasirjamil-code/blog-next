@@ -139,7 +139,7 @@ const AddService = () => {
           <p className="text-2xl font-bold">Upload Service Image</p>
           <label htmlFor="serviceImage" className="cursor-pointer ">
             <Image
-              className="mt-4 object-cover object-center w-24 invert  border-4 border-gray-400"
+              className="mt-4 object-cover object-center w-24 dark:invert  dark:border-4 border-gray-400"
               width={270}
               height={70}
               alt="Upload Area"
