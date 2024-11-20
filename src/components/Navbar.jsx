@@ -95,7 +95,7 @@ const Navbar = () => {
           </>
         )}
 
-        {session && ( 
+        {session && (
           <div>
             <div
               className="p-1rounded-full cursor-pointer relative"
@@ -109,17 +109,18 @@ const Navbar = () => {
                 alt="User Image"
                 className="rounded-full"
               />
-              
             </div>
-            {open && (
+            {open === true ? (
               <div className="absolute top-5 right-5" ref={divRef}>
                 <Link
-                  className="px-4 py-2 bg-blue-900 rounded-full font-medium hover:opacity-90 hover:scale-[10px] text-white"
+                  className="px-4 dark:border border-gray-200 dark:bg-gray-400 py-2 bg-blue-900 rounded-full font-medium hover:opacity-90 hover:scale-[10px] text-white"
                   href={"/admin"}
                 >
                   Admin
                 </Link>
               </div>
+            ) : (
+              <div></div>
             )}
           </div>
         )}
