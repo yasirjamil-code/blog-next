@@ -19,7 +19,7 @@ const TableFile = ({ key, id, title, index, author, date, deleteBlog }) => {
         
         <button
           onClick={() => deleteBlog(id)}
-          className="text-red-600 px-1 ml-2 hover:bg-gray-200 dark:bg-gray-200 dark:text-red-600 rounded-full"
+          className="text-red-600 px-1 ml-2 hover:bg-gray-200  !bg-gray-200  dark:!bg-gray-200 dark:text-red-600 rounded-full"
         >
           Delete
         </button>
