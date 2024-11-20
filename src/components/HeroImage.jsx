@@ -46,7 +46,7 @@ const HeroImage = () => {
   };
 
   return (
-    <div className="relative flex items-center justify-center h-[90vh] w-full mb-8">
+    <div className="relative  flex items-center justify-center h-[90vh] w-full mb-8">
       <video
         ref={videoRef}
         loop
@@ -55,15 +55,15 @@ const HeroImage = () => {
         onEnded={handleVideoEnd} // Handle when the video ends
         src="/hero.mp4"
         alt="Hero"
-        className="w-full h-[90vh] object-cover opacity-95 transition-opacity duration-500" // Add fade transition
+        className="w-full h-[90vh] object-cover opacity-95 transition-opacity duration-500 hidden lg:flex" // Add fade transition
       ></video>
 
       <div className="absolute top-36 flex flex-col items-center gap-4">
-        <h1 className="text-4xl font-bold py-2 px-5 rounded-full bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-yellow-300">
+        <h1 className="text-2xl sm:text-4xl  font-bold py-2 px-5 rounded-full bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-yellow-300">
           Subscribe To Get Updates
         </h1>
 
-        <form className="flex gap-2" onSubmit={onSubmitHandler}>
+        <form className="flex flex-col sm:flex-row  gap-2" onSubmit={onSubmitHandler}>
           <input
             onChange={(e) => setEmail(e.target.value)}
             value={email}
@@ -73,7 +73,7 @@ const HeroImage = () => {
           />
           <button
             type="submit"
-            className="px-5 hover:text-gray-900 dark:hover:text-white transition-all duration-300 py-2 bg-transparent border-2 border-blue-500 text-white rounded-lg hover:opacity-95 active:opacity-90"
+            className="px-5 w-max mx-auto hover:text-gray-900 dark:hover:text-white transition-all duration-300 py-2 bg-transparent border-2 border-blue-500 text-white rounded-lg hover:opacity-95 active:opacity-90"
           >
             Subcribe
           </button>

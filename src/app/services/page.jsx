@@ -31,7 +31,7 @@ const Services = () => {
   }
 
   return (
-    <div className="flex flex-wrap justify-evenly">
+    <div className="flex justify-evenly flex-col sm:flex-row md:flex-row flex-wrap">
       {Services.map((service, index) => {
         const { title, serviceCategory, serviceImage, _id, developer } =
           service;

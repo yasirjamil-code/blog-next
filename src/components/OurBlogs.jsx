@@ -21,7 +21,7 @@ const PaginationComponent = ({ cards }) => {
 
   return (
     <div>
-      <div className="cards flex gap-10 justify-evenly overflow-x-auto dark:bg-[#0f0f0f] text-[#eee]">
+      <div className="cards flex flex-col sm:flex-row md:flex-row flex-wrap gap-10 justify-evenly overflow-x-auto dark:bg-[#0f0f0f] dark:text-[#eee]">
         {currentCards.length > 0 ? (
           currentCards.map((item) => (
             <SingleBlogs
@@ -82,7 +82,7 @@ const OurBlogs = () => {
   }, []);
 
   return (
-    <div className="px-10 my-4">
+    <div className="px-2 my-4">
       <div>
         <div className="title">
           <h1 className="text-4xl font-semibold text-center">Our Blogs</h1>

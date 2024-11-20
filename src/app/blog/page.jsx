@@ -52,7 +52,7 @@ const Page = () => {
 
   return (
     <div>
-      <div className="flex gap-4 justify-center mt-8">
+      <div className="flex gap-4 justify-center mt-8 text-center">
         {options.map((item, index) => (
           <button
             onClick={() => setMenu(item)}
@@ -79,7 +79,7 @@ const Page = () => {
           Search
         </button>
       </form>
-      <div className="flex flex-wrap justify-evenly">
+      <div className="flex flex-col md:flex-row flex-wrap justify-evenly">
         {filteredBlogs.map((item) => {
           const {
             _id,

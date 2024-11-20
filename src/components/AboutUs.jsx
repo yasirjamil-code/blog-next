@@ -3,10 +3,10 @@ import React from "react";
 
 const AboutUs = () => {
   return (
-    <div className="my-6 px-10">
+    <div className="my-6 px-3 sm:px-4 lg:px-10">
       <h1 className="text-4xl font-semibold text-center ">About Us</h1>
       <hr className="w-1/2 my-2 mx-auto" />
-      <div className="flex gap-2">
+      <div className="flex gap-2 flex-col lg:flex-row">
         <div className="image  flex-1">
           <Image
             src={"/imageAbout.jpg"}
