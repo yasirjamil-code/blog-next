@@ -106,7 +106,7 @@ const AddBlog = () => {
             />
           </label>
         </div>
-        <div className="flex flex-col gap-4 dark:bg-[#0F0F0F] dark:text-[#eee]">
+        <div className="flex flex-col gap-4 *:dark:bg-[#0F0F0F] dark:text-[#eee]">
           <p className="text-2xl font-bold">Select Category</p>
           <select
             value={data.postCategory}
