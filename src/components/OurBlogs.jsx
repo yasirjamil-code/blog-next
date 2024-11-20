@@ -31,6 +31,7 @@ const PaginationComponent = ({ cards }) => {
               blogImage={item.blogImage}
               author={item.author}
               category={item.postCategory}
+              date={item.date}
             />
           ))
         ) : (

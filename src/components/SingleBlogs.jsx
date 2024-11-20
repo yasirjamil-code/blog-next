@@ -3,7 +3,6 @@ import Link from "next/link";
 import React from "react";
 
 const SingleBlogs = ({ id, title, date, blogImage, category, searchPost }) => {
-  const blogDate = date ? new Date(date) : new Date(); // Ensure date is valid
 
   return (
     <div className="w-[380px] hover:bg-blue-100 *:text-black dark:*:dark:text-[#eee] dark:hover:bg-[#2b2a2a] transition-all p-2 mt-8  ">
@@ -37,7 +36,7 @@ const SingleBlogs = ({ id, title, date, blogImage, category, searchPost }) => {
             </Link>
           </h3>
           <div className="flex justify-between gap-4 items-center">
-            <span>{blogDate.toLocaleDateString()}</span>
+            <span>{new Date(date).toLocaleDateString()}</span>
             <button className="bg-blue-500 capitalize text-white px-3 py-1 rounded">
               {category}
             </button>

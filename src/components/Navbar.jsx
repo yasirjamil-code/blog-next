@@ -57,7 +57,7 @@ const Navbar = () => {
       <div className="flex gap-4 items-center flex-1">
         <button
           onClick={toggleTheme}
-          className="dark:border-none dark:hover:border-none"
+          className="dark:border-none rounded-full hover:scale-110 transition-all dark:hover:border-none"
         >
           <Image
             alt="Theme Toggle"

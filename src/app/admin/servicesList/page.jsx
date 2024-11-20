@@ -1,5 +1,6 @@
 "use client";
 import TableFile from "@/components/AdminComponents/TableFile";
+import Loading from "@/components/Loading";
 import ServicesTable from "@/components/ServicesTable";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
@@ -7,6 +8,10 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 const BlogData = () => {
   const [Services, setServices] = useState([]);
+
+  if (!Services) {
+    return <Loading/>
+  }
 
   const fetchServices = async () => {
     const response = await axios.get("/api/services");

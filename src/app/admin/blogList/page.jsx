@@ -1,10 +1,15 @@
 "use client";
 import TableFile from "@/components/AdminComponents/TableFile";
+import Loading from "@/components/Loading";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 
 const BlogData = () => {
   const [blog, setBlog] = useState([]);
+
+  if (!blog) {
+    return <Loading/>
+  }
 
   const deleteBlog = async (id) => {
     const confirmed = window.confirm(

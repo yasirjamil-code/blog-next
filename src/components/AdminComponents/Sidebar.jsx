@@ -43,7 +43,7 @@ const Sidebar = () => {
               href={link.href}
               className={`mr-3 rounded-xl flex items-center border dark:border dark:border-white border-black gap-3 font-medium mt-5 px-3 py-2 ${
                 pathname === link.href
-                  ? "shadow-[-5px_5px_0px_#000000] bg-gray-200"
+                  ? "shadow-[-5px_5px_0px_#000000] dark:shadow-[-5px_5px_0px_#242323] dark:bg-[#242323] bg-gray-200"
                   : "bg-white text-black"
               } `}
             >
