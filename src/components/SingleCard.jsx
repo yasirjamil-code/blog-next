@@ -4,7 +4,7 @@ import React from "react";
 
 const SingleCard = ({ id, title, developer, serviceImage }) => {
   return (
-    <div className="w-[380px] hover:bg-blue-100 dark:hover:bg-[#2b2a2a] transition-all p-2 mt-8">
+    <div className="w-[350px] sm:w-[380px] hover:bg-blue-100 dark:hover:bg-[#2b2a2a] transition-all p-2 mt-8">
       <div className="bg-white shadow-lg flex flex-col items-center dark:border rounded-lg overflow-hidden dark:bg-[#0f0f0f] dark:text-[#eee]">
         <Link href={`/services/${id}`} className="w-full">
           <Image

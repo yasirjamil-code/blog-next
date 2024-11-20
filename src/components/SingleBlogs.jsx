@@ -5,7 +5,7 @@ import React from "react";
 const SingleBlogs = ({ id, title, date, blogImage, category, searchPost }) => {
 
   return (
-    <div className="w-[380px] hover:bg-blue-100 *:text-black dark:*:dark:text-[#eee] dark:hover:bg-[#2b2a2a] transition-all p-2 mt-8  ">
+    <div className="w-[355px] overflow-x-hidden sm:w-[380px] hover:bg-blue-100 *:text-black dark:*:dark:text-[#eee] dark:hover:bg-[#2b2a2a] transition-all p-2 mt-8  ">
       <div className="bg-white shadow-lg flex flex-col justify-between dark:bg-[#0F0F0F]  dark:border items-center rounded-lg overflow-hidden min-h-[320px]">
         <Link
           target="_blank"
