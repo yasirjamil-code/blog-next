@@ -9,7 +9,7 @@ const EmailTable = ({ id, email, index, deleteEmail, date }) => { // Fixed the s
       <td className="text-center bg-indigo-200 px-2 py-2">
         <button
           onClick={() => deleteEmail(id)} // Pass the id correctly
-          className="text-red-600 px-1 ml-2 hover:bg-gray-200 dark:bg-gray-200 dark:text-red-600 rounded-full"
+          className="text-red-600 px-1 ml-2 hover:bg-gray-200 bg-gray-200 dark:bg-gray-200 dark:text-red-600 rounded-full"
         >
           Delete
         </button>

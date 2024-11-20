@@ -119,7 +119,7 @@ const AddBlog = () => {
             <option value="UI-UX">UI-UX</option>
           </select>
         </div>
-        <div className="flex flex-col gap-4 dark:bg-[#0F0F0F] text-[#eee]">
+        <div className="flex flex-col gap-4 *:dark:bg-[#0F0F0F] text-[#eee]">
           <p className="text-2xl font-bold">Select Blog Author </p>
           <select
             value={data.author}
