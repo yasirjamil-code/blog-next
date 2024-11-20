@@ -75,7 +75,7 @@ const AddService = () => {
 
         {/* Service Description */}
         <div>
-          <p className="text-2xl font-bold">Service Description</p>
+          <p className="text-2xl font-bold *:dark:bg-[#0F0F0F] text-[#eee]">Service Description</p>
           <input
             value={data.serviceDescription}
             name="serviceDescription"
@@ -87,7 +87,7 @@ const AddService = () => {
         </div>
 
         {/* Service Category */}
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 ">
           <p className="text-2xl font-bold">Service Category</p>
           <select
             value={data.serviceCategory}
@@ -107,7 +107,7 @@ const AddService = () => {
         </div>
 
         {/* Service Developer */}
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 *:dark:bg-[#0F0F0F] text-[#eee]">
           <p className="text-2xl font-bold">Service Developer</p>
           <select
             value={data.serviceDeveloper}

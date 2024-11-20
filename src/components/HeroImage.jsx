@@ -73,7 +73,7 @@ const HeroImage = () => {
           />
           <button
             type="submit"
-            className="px-5 hover:text-gray-900 transition-all duration-300 py-2 bg-transparent border-2 border-blue-500 text-white rounded-lg hover:opacity-95 active:opacity-90"
+            className="px-5 hover:text-gray-900 dark:hover:text-white transition-all duration-300 py-2 bg-transparent border-2 border-blue-500 text-white rounded-lg hover:opacity-95 active:opacity-90"
           >
             Subcribe
           </button>

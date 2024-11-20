@@ -17,12 +17,12 @@ const TableFile = ({ key, id, title, index, author, date, deleteBlog }) => {
       </td>
       <td className="text-center px-2 py-2">
         
-        <button
+        <div
           onClick={() => deleteBlog(id)}
           className="text-red-600 px-1 ml-2 hover:bg-gray-200  !bg-gray-200  dark:!bg-gray-200 dark:text-red-600 rounded-full"
         >
           Delete
-        </button>
+        </div>
       </td>
     </tr>
   );
