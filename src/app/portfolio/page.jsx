@@ -12,7 +12,7 @@ const skillsArray = [
   { title: "Node JS", img: "/icon-svg/nodejs.svg" },
   { title: "MongoDB", img: "/icon-svg/mongodb.svg" },
   { title: "NextAuth", img: "/icon-svg/nextauth.png" },
-  { title: "GitHub", img: "/icon-svg/github.svg" },
+  { title: "GitHub", img: "/icon-svg/github.png" },
 ];
 
 export default function Portfolio() {
@@ -45,7 +45,10 @@ export default function Portfolio() {
           HTML, CSS, JavaScript, ReactJS, and Next.js. I love creating modern,
           responsive, and user-friendly websites. I enjoy the process of
           building clean, efficient, and scalable web applications. My goal is
-          to keep learning and delivering high-quality web solutions.
+          to keep learning and delivering high-quality web solutions. You can
+          download my resume{" "}
+            <a className="text-blue-500 dark:text-blue-500" href="/resume.pdf" download="WebDev_Resume.pdf">Click here to download my resume</a>
+          .
         </p>
       </section>
 
