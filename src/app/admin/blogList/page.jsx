@@ -8,7 +8,7 @@ const BlogData = () => {
   const [blog, setBlog] = useState([]);
 
   if (!blog) {
-    return <Loading/>
+    return <Loading />;
   }
 
   const deleteBlog = async (id) => {
@@ -42,30 +42,32 @@ const BlogData = () => {
   }, []);
 
   return (
-    <table className="w-full border-collapse mx-2 dark:text-black">
-      <thead>
-        <tr className="bg-gray-400">
-          <th className="w-14 px-2 py-2">Posts</th>
-          <th className="px-2 py-2">Title</th>
-          <th className="w-36 px-2 py-2">Author</th>
-          <th className="w-36 px-2 py-2">Date</th>
-          <th className="w-36 px-2 py-2">Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        {blog.map((post, index) => (
-          <TableFile
-            key={index}
-            id={post._id}
-            title={post.title}
-            index={index}
-            author={post.author}
-            date={post.date}
-            deleteBlog={deleteBlog}
-          />
-        ))}
-      </tbody>
-    </table>
+    <div className="overflow-x-auto">
+      <table className="w-full border-collapse mx-2 dark:text-black">
+        <thead>
+          <tr className="bg-gray-400">
+            <th className="w-14 px-2 py-2">Posts</th>
+            <th className="px-2 py-2">Title</th>
+            <th className="w-36 px-2 py-2">Author</th>
+            <th className="w-36 px-2 py-2">Date</th>
+            <th className="w-36 px-2 py-2">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {blog.map((post, index) => (
+            <TableFile
+              key={index}
+              id={post._id}
+              title={post.title}
+              index={index}
+              author={post.author}
+              date={post.date}
+              deleteBlog={deleteBlog}
+            />
+          ))}
+        </tbody>
+      </table>
+    </div>
   );
 };
 

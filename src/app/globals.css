@@ -77,15 +77,26 @@ body {
   background: #0f0f0f;
   color: #eee;
 }
+
+.dark {
+  background: #0f0f0f;
+  color: #eee;
+}
+.dark-border {
+  background: #0f0f0f;
+  color: #eee;
+  border: 1.5px solid gray;
+
+}
 /* Default (light mode) - No inversion */
 a > img {
-  filter: invert(0);  /* This is the default (light mode) */
+  filter: invert(0); /* This is the default (light mode) */
 }
 
 /* Dark mode - Image inversion */
 .dark a > img {
-  filter: invert(1);  /* Inverts the image for dark mode */
-  transition: filter 0.3s ease;  /* Optional: adds a smooth transition */
+  filter: invert(1); /* Inverts the image for dark mode */
+  transition: filter 0.3s ease; /* Optional: adds a smooth transition */
 }
 .dark button:hover {
   background: #272728;
@@ -103,16 +114,16 @@ a > img {
 }
 
 ::-webkit-scrollbar-track {
-  background-color: #f1f1f1;  /* Light track */
+  background-color: #f1f1f1; /* Light track */
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #888;  /* Light thumb */
+  background-color: #888; /* Light thumb */
   border-radius: 6px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #555;  /* Darker thumb on hover */
+  background-color: #555; /* Darker thumb on hover */
 }
 
 /* Dark Mode Scrollbar */
@@ -121,17 +132,16 @@ a > img {
 }
 
 .dark ::-webkit-scrollbar-track {
-  background-color: #1b1a1a;  /* Dark track */
+  background-color: #1b1a1a; /* Dark track */
 }
 
 .dark ::-webkit-scrollbar-thumb {
-  background-color: #888;  /* Dark thumb */
+  background-color: #888; /* Dark thumb */
   border-radius: 6px;
 }
 
 .dark ::-webkit-scrollbar-thumb:hover {
-  background-color: #555;  /* Darker thumb on hover */
+  background-color: #555; /* Darker thumb on hover */
 }
 
 /* Body Styles */
-

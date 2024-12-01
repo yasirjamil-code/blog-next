@@ -2,16 +2,11 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const SingleBlogs = ({ id, title, date, blogImage, category, searchPost }) => {
-
+const SingleBlogs = ({ id, title, date, blogImage, category }) => {
   return (
-    <div className="w-[355px] overflow-x-hidden sm:w-[380px] hover:bg-blue-100 *:text-black dark:*:dark:text-[#eee] dark:hover:bg-[#2b2a2a] transition-all p-2 mt-8  ">
-      <div className="bg-white shadow-lg flex flex-col justify-between dark:bg-[#0F0F0F]  dark:border items-center rounded-lg overflow-hidden min-h-[320px]">
-        <Link
-          target="_blank"
-        href={`/blog/${id}`}
-          className="ml-10 mt-5 w-full mr-10"
-        >
+    <div className="w-full sm:w-[355px] md:w-[380px] hover:bg-blue-100 dark:hover:bg-[#2b2a2a] transition-all p-2 mt-8 rounded-lg">
+      <div className="bg-white shadow-lg dark:bg-[#0F0F0F] dark:border items-center rounded-lg overflow-hidden min-h-[320px]">
+        <Link href={`/blog/${id}`} target="_blank" className="relative w-full">
           <Image
             src={blogImage}
             alt={title}
@@ -20,19 +15,17 @@ const SingleBlogs = ({ id, title, date, blogImage, category, searchPost }) => {
             width={300}
           />
         </Link>
-        <div className="pb-4">
+        <div className="pb-4 px-2">
           <h3
-            className="text-lg font-medium mb-2 max-w-[320px]"
+            className="text-lg font-medium mb-2 max-w-[320px] text-center"
             style={{ wordSpacing: "0.1rem" }}
           >
             {title.length > 40 ? title.slice(0, 40) + "..." : title}
-            &nbsp;
             <Link
-              target="_blank"
               href={`/blog/${id}`}
-              className="text-blue-600 dark:text-blue-600 text-[16px] hover:underline"
+              className="text-blue-600 dark:text-blue-400 text-[16px] hover:underline"
             >
-              Read more
+              &nbsp;Read more
             </Link>
           </h3>
           <div className="flex justify-between gap-4 items-center">

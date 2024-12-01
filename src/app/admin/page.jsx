@@ -9,7 +9,9 @@ const Admin = () => {
 
   useEffect(() => {
     if (status === "unauthenticated") {
-      router.push("http://localhost:3000/api/auth/signin?callbackUrl=http%3A%2F%2Flocalhost%3A3000%2F");
+      router.push(
+        "http://localhost:3000/api/auth/signin?callbackUrl=http%3A%2F%2Flocalhost%3A3000%2F"
+      );
     }
   }, [status, router]);
 
@@ -17,7 +19,13 @@ const Admin = () => {
     return <div>Loading...</div>; // Optional: Show a loading state while checking auth status
   }
 
-  return <div>Admin</div>;
+  return (
+    <div className="w-full h-screen">
+      <h1 className="text-center text-2xl font-bold flex mt-10  justify-center">
+        Welcome {session.user.name}, to dashboard!
+      </h1>
+    </div>
+  );
 };
 
 export default Admin;

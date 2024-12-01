@@ -6,17 +6,17 @@ const AboutUs = () => {
     <div className="my-6 px-3 sm:px-4 lg:px-10">
       <h1 className="text-4xl font-semibold text-center ">About Us</h1>
       <hr className="w-1/2 my-2 mx-auto" />
-      <div className="flex gap-2 flex-col lg:flex-row">
+      <div className="flex gap-2 flex-col items-center lg:flex-row">
         <div className="image  flex-1">
           <Image
-            src={"/imageAbout.jpg"}
+            src={"/imageAbout.png"}
             width={650}
-            height={420}
+            height={30}
             alt=""
             className="object-cover w-full h-full"
           />
         </div>
-        <div className="content border-[1px] border-gray-400 p-2 flex-1">
+        <div className="content border p-2 flex-1 !border-none">
           <h2 className=" font-semibold text-2xl my-4">Our Vision</h2>
           <p className=" text-gray-700 font-light dark:text-[#eee]">
             We are a dynamic software development company dedicated to

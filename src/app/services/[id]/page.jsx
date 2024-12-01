@@ -4,7 +4,7 @@ import axios from "axios";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 
-const page = ({ params }) => {
+const Page = ({ params }) => {
   const [data, setData] = useState(null);
 
   const fetchServiceData = async () => {
@@ -19,16 +19,19 @@ const page = ({ params }) => {
   }, []);
 
   if (!data) {
-    return <Loading/>
+    return <Loading />;
   }
 
   return (
     <div className="max-w-7xl mx-auto p-6">
-      <h1 className="text-3xl font-bold text-center mb-4 ">{data.title}</h1>
-      <div className="flex flex-row gap-4 justify-around h-[60vh] rounded-lg border-[1.5px] border-gray-800 bg-gray-200 p-4 items-center">
-        <div className="w-[30vw] h-[200px] relative overflow-hidden mb-4">
+      <h1 className="text-3xl font-bold text-center mb-4">{data.title}</h1>
+      
+      {/* Main container with responsive layout */}
+      <div className="flex flex-col dark:bg-[#0c0c0c] *:text-[#eee]  sm:flex-row gap-4 justify-between h-auto sm:h-[60vh] rounded-lg border-[1.5px] border-gray-800 bg-gray-200 p-4 items-center">
+        
+        {/* Image container */}
+        <div className="w-full sm:w-[30vw] h-[200px] sm:h-auto relative overflow-hidden mb-4 sm:mb-0">
           <Image
-          
             src={data.serviceImage}
             alt={data.service}
             layout="fill"
@@ -36,8 +39,11 @@ const page = ({ params }) => {
             className="object-cover rounded-lg"
           />
         </div>
-        <div>
-          <div className="authorimage flex items-center justify-center mb-4">
+
+        {/* Text and Details section */}
+        <div className="flex flex-col items-center sm:items-start ">
+          {/* Developer info */}
+          <div className="authorimage flex items-center justify-center sm:justify-start mb-4">
             <Image
               src={
                 data.developer === "John Doe"
@@ -58,14 +64,13 @@ const page = ({ params }) => {
               <p className="text-sm text-gray-500">"{data.serviceCategory} Expert"</p>
             </div>
           </div>
-          <div className="description text-lg">
-            <p className="mb-4">{data.serviceDescription}</p>
+
+          {/* Description */}
+          <div className="description text-lg text-center sm:text-left">
+            <p className="mb-4 dark:text-[#eee]0">{data.serviceDescription}</p>
             <p className="font-bold">
               Average Price:{" "}
-              <span className="text-green-600">
-                {" "}
-                $ {data.servicePrice}/Hour
-              </span>
+              <span className="text-green-600">${data.servicePrice}/Hour</span>
             </p>
           </div>
         </div>
@@ -74,4 +79,4 @@ const page = ({ params }) => {
   );
 };
 
-export default page;
+export default Page;

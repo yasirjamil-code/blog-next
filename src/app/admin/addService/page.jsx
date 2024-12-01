@@ -20,7 +20,6 @@ const AddService = () => {
   const onChangeHandler = (e) => {
     const name = e.target.name;
     const value = e.target.value;
-
     setData((data) => ({ ...data, [name]: value }));
   };
 
@@ -28,7 +27,6 @@ const AddService = () => {
     e.preventDefault();
 
     const formData = new FormData();
-
     formData.append("title", data.title);
     formData.append("serviceDeveloper", data.serviceDeveloper);
     formData.append("serviceImage", serviceImage);
@@ -54,14 +52,11 @@ const AddService = () => {
   };
 
   return (
-    <div className="m-10">
+    <div className="m-5 sm:m-10">
       <ToastContainer autoClose={1000} theme="light" />
-      <form
-        className="flex flex-col gap-8"
-        onSubmit={onSubmitHandler}
-      >
+      <form className="flex flex-col gap-8" onSubmit={onSubmitHandler}>
         {/* Service Title */}
-        <div>
+        <div className="flex flex-col sm:flex-row sm:items-center gap-4">
           <p className="text-2xl font-bold">Service Title</p>
           <input
             value={data.title}
@@ -69,31 +64,31 @@ const AddService = () => {
             onChange={onChangeHandler}
             type="text"
             placeholder="Add Your Title..."
-            className="py-2 px-4 border-[1.5px] border-slate-600 w-[500px]"
+            className="py-2 px-4 border-[1.5px] border-slate-600 w-full sm:w-[500px]"
           />
         </div>
 
         {/* Service Description */}
-        <div>
-          <p className="text-2xl font-bold *:dark:bg-[#0F0F0F] text-[#eee]">Service Description</p>
+        <div className="flex flex-col sm:flex-row sm:items-center gap-4">
+          <p className="text-2xl font-bold text-[#eee]">Service Description</p>
           <input
             value={data.serviceDescription}
             name="serviceDescription"
             onChange={onChangeHandler}
             type="text"
             placeholder="Add Your Description..."
-            className="py-2 px-4 border-[1.5px] border-slate-600 w-[500px]"
+            className="py-2 px-4 border-[1.5px] border-slate-600 w-full sm:w-[500px]"
           />
         </div>
 
         {/* Service Category */}
-        <div className="flex flex-col gap-4 *:dark:bg-[#0F0F0F] *:text-[#eee]">
+        <div className="flex flex-col sm:flex-row sm:items-center gap-4">
           <p className="text-2xl font-bold">Service Category</p>
           <select
             value={data.serviceCategory}
             onChange={onChangeHandler}
             name="serviceCategory"
-            className="w-60 px-4 py-4 border-[1.5px] border-gray-600 text-gray-500 font-[600]"
+            className="w-full sm:w-60 px-4 py-4 border-[1.5px] border-gray-600 text-gray-500 font-[600]"
           >
             <option value="Web Development">Web Development</option>
             <option value="App Development">App Development</option>
@@ -107,13 +102,13 @@ const AddService = () => {
         </div>
 
         {/* Service Developer */}
-        <div className="flex flex-col gap-4 *:dark:bg-[#0F0F0F] text-[#eee]">
-          <p className="text-2xl font-bold">Service Developer</p>
+        <div className="flex flex-col sm:flex-row sm:items-center gap-4">
+          <p className="text-2xl font-bold text-[#eee]">Service Developer</p>
           <select
             value={data.serviceDeveloper}
             onChange={onChangeHandler}
             name="serviceDeveloper"
-            className="w-60 px-4 py-4 border-[1.5px] border-gray-600 text-gray-500 font-[600]"
+            className="w-full sm:w-60 px-4 py-4 border-[1.5px] border-gray-600 text-gray-500 font-[600]"
           >
             <option value="John Doe">John Doe</option>
             <option value="Mr.Smith">Mr.Smith</option>
@@ -122,39 +117,32 @@ const AddService = () => {
         </div>
 
         {/* Service Price */}
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col sm:flex-row sm:items-center gap-4">
           <p className="text-2xl font-bold">Service Price $/hr</p>
           <input
             value={data.servicePrice}
             onChange={onChangeHandler}
             type="number"
             name="servicePrice"
-            className="py-2 px-4 border-[1.5px] border-slate-600 w-40"
+            className="py-2 px-4 border-[1.5px] border-slate-600 w-full sm:w-40"
             placeholder="Enter Price"
           />
         </div>
 
         {/* Upload Service Image */}
-        <div className="">
+        <div className="flex flex-col sm:flex-row sm:items-center gap-4">
           <p className="text-2xl font-bold">Upload Service Image</p>
-          <label htmlFor="serviceImage" className="cursor-pointer ">
+          <label htmlFor="serviceImage" className="cursor-pointer">
             <Image
-              className="mt-4 object-cover object-center w-24 dark:invert  dark:border-4 border-gray-400"
+              className="mt-4 object-cover object-center w-24 dark:invert dark:border-4 border-gray-400"
               width={270}
               height={70}
               alt="Upload Area"
-              src={
-                serviceImage
-                  ? URL.createObjectURL(serviceImage)
-                  : "/upload_area.png"
-              }
+              src={serviceImage ? URL.createObjectURL(serviceImage) : "/upload_area.png"}
             />
             <input
               ref={fileInputRef}
-              onChange={(e) => {
-                const file = e.target.files[0];
-                setServiceImage(file);
-              }}
+              onChange={(e) => setServiceImage(e.target.files[0])}
               type="file"
               id="serviceImage"
               className="hidden"

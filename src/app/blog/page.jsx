@@ -16,7 +16,6 @@ const Page = () => {
       const response = await axios.get("/api/blog");
       if (response.data.blogs) {
         setBlog(response.data.blogs);
-        console.log(response.data.blogs);
       } else {
         console.warn("No blogs found");
       }
@@ -51,45 +50,48 @@ const Page = () => {
   }
 
   return (
-    <div>
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Category Filter */}
       <div className="flex gap-4 justify-center mt-8 text-center">
         {options.map((item, index) => (
           <button
             onClick={() => setMenu(item)}
-            className={
+            className={`${
               menu === item
                 ? "bg-[#1d1d1d] px-3 py-1 border-2 border-black text-white"
                 : "px-2 py-1 border-2 border-gray-700"
-            }
+            } text-sm md:text-base transition-all duration-300 rounded-md`}
             key={index}
           >
             {item}
           </button>
         ))}
       </div>
-      <form onSubmit={handleSearchSubmit} className="text-center my-8">
+
+      {/* Search Bar */}
+      <form
+        onSubmit={handleSearchSubmit}
+        className="text-center my-8 max-w-[500px] mx-auto"
+      >
         <input
           value={searchValue}
           onChange={(e) => setSearchValue(e.target.value)}
           type="text"
-          placeholder="Search for blog.."
-          className="border-[1.5px] border-gray-400 px-4 py-2 w-[400px] outline-none"
+          placeholder="Search for blog..."
+          className="border-2 border-gray-400 px-4 py-2 w-full sm:w-[400px] lg:w-[500px] outline-none rounded-md"
         />
-        <button type="submit" className="bg-black px-4 py-2 ml-4 text-white">
+        <button
+          type="submit"
+          className="bg-black px-4 py-2 ml-4 text-white rounded-md sm:hidden md:inline-block"
+        >
           Search
         </button>
       </form>
-      <div className="flex flex-col md:flex-row flex-wrap justify-evenly">
+
+      {/* Blog Cards */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
         {filteredBlogs.map((item) => {
-          const {
-            _id,
-            title,
-            blogImage,
-            description,
-            author,
-            postCategory,
-            date,
-          } = item;
+          const { _id, title, blogImage, description, author, postCategory, date } = item;
           return (
             <SingleBlogs
               key={_id}

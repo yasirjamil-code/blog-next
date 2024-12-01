@@ -12,7 +12,7 @@ const skillsArray = [
   { title: "Node JS", img: "/icon-svg/nodejs.svg" },
   { title: "MongoDB", img: "/icon-svg/mongodb.svg" },
   { title: "NextAuth", img: "/icon-svg/nextauth.png" },
-  { title: "GitHub", img: "/icon-svg/github.png" },
+  { title: "GitHub", img: "/icon-svg/github.png`" },
 ];
 
 export default function Portfolio() {
@@ -21,7 +21,9 @@ export default function Portfolio() {
       {/* Header Section */}
       <header className="w-full text-center py-16 bg-gradient-to-r text-black from-indigo-200 to-purple-200 dark:from-gray-900 to-purple-980 dark:text-white shadow-lg">
         <h1 className="text-5xl font-extrabold">Yasir Jamil</h1>
-        <p className="text-xl mt-4">Web Developer | ReactJS | NextJS | TailwindCSS</p>
+        <p className="text-xl mt-4">
+          Web Developer | ReactJS | NextJS | TailwindCSS
+        </p>
       </header>
 
       {/* Image Section */}
@@ -39,15 +41,23 @@ export default function Portfolio() {
 
       {/* About Me Section */}
       <section className="py-12 px-6 max-w-3xl text-center">
-        <h2 className="text-3xl font-semibold text-gray-800 dark:text-white">About Me</h2>
+        <h2 className="text-3xl font-semibold text-gray-800 dark:text-white">
+          About Me
+        </h2>
         <p className="text-lg mt-6">
           Hi, I'm Yasir Jamil, a passionate web developer with experience in
           HTML, CSS, JavaScript, ReactJS, and Next.js. I love creating modern,
           responsive, and user-friendly websites. I enjoy the process of
           building clean, efficient, and scalable web applications. My goal is
           to keep learning and delivering high-quality web solutions. You can
-          download my resume{" "}
-            <a className="text-blue-500 dark:text-blue-500" href="/resume.pdf" download="WebDev_Resume.pdf">Click here to download my resume</a>
+          download my resume
+          <a
+            className="text-blue-500 dark:text-blue-500"
+            href="/resume.pdf"
+            download="WebDev_Resume.pdf"
+          >
+            Click here to download my resume
+          </a>
           .
         </p>
       </section>
@@ -72,7 +82,9 @@ export default function Portfolio() {
                   className="rounded-md"
                 />
               </div>
-              <span className="mt-2 text-sm text-gray-700 dark:text-white">{skill.title}</span>
+              <span className="mt-2 text-sm text-gray-700 dark:text-white">
+                {skill.title}
+              </span>
             </div>
           ))}
         </div>
@@ -80,14 +92,16 @@ export default function Portfolio() {
 
       {/* Contact Section */}
       <section className="py-12 px-6 max-w-xl text-center">
-        <h2 className="text-3xl font-semibold text-gray-800 dark:text-white">Contact Me</h2>
+        <h2 className="text-3xl font-semibold text-gray-800 dark:text-white">
+          Contact Me
+        </h2>
         <p className="text-lg text-gray-700 dark:text-gray-300 mt-4">
           Feel free to reach out for collaboration or inquiries.
         </p>
         <a
           href="/contact-us"
           target="_blank"
-          className="mt-8 inline-block  text-white py-3 px-6 rounded-md text-xl transition duration-200 ease-in-out transform hover:scale-110 bg-blue-500 dark:border dark:hover:bg-[#161719]" 
+          className="mt-8 inline-block  text-white py-3 px-6 rounded-md text-xl transition duration-200 ease-in-out transform hover:scale-110 bg-blue-500 dark:border dark:hover:bg-[#161719]"
         >
           Get in Touch
         </a>

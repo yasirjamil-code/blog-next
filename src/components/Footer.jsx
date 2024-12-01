@@ -9,14 +9,14 @@ const Footer = () => {
     <div className="bg-gray-800 text-white p-4 mt-2 dark:border-t dark:bg-[#0f0f0f] ">
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-between">
         {/* Navigation Links */}
-        <div className="flex space-x-4">
+        <div className="flex space-x-4 ">
           <div className="flex space-x-4">
             {navlinks.map((link, index) => {
               return (
                 <Link
                   key={index}
                   href={link.href}
-                  className="hover:  capitalize dark:bg-transparent text-[#eee]"
+                  className="hover:underline text-sm md:text-base capitalize dark:bg-transparent text-[#eee]"
                   target="_blank"
                 >
                   {link.title}

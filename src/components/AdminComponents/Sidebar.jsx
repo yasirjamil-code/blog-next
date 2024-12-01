@@ -28,35 +28,33 @@ const Sidebar = () => {
     },
     {
       href: "/admin/subcriptions",
-      label: "Subcriptions",
+      label: "Subscriptions",
       icon: "/admin-img/email.png",
     },
   ];
 
   return (
     <div className="flex flex-col min-h-[100vh] bg-blue-100 border-r dark:bg-[#0F0F0F] dark:text-[#eee]">
-      <div className="w-28 sm:w-80 h-full relative py-12 border border-black ">
-        <div className="w-[50%] sm:w-[80%] absolute right-0">
+      {/* Sidebar container with responsive width */}
+      <div className="w-[112px] sm:w-[320px] h-full relative py-6 border-r dark:border-gray-700 transition-all duration-300">
+        <div className="flex flex-col items-center sm:items-start">
           {links.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className={`mr-3 rounded-xl flex items-center border dark:border dark:border-white border-black gap-3 font-medium mt-5 px-3 py-2 ${
+              className={`flex items-center gap-3 font-medium mt-5 px-3 py-2 rounded-xl w-full ${
                 pathname === link.href
                   ? "shadow-[-5px_5px_0px_#000000] dark:shadow-[-5px_5px_0px_#242323] dark:bg-[#242323] bg-gray-200"
                   : "bg-white text-black"
-              } `}
+              }`}
             >
               <Image
-                className={
-                  pathname === link.href && ""
-                }
                 src={link.icon}
                 alt={link.label}
                 width={28}
                 height={28}
               />
-              <p>{link.label}</p>
+              <p className="text-[8px]">{link.label}</p> {/* Show label only on larger screens */}
             </Link>
           ))}
         </div>

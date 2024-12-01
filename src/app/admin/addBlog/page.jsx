@@ -60,9 +60,12 @@ const AddBlog = () => {
   };
 
   return (
-    <div className="m-10">
+    <div className="m-4 md:m-10">
       <ToastContainer theme="dark" autoClose={1000} />
-      <form className="flex flex-col gap-8" onSubmit={submitHandler}>
+      <form
+        className="flex flex-col gap-8 md:w-[600px] w-full mx-auto" // Adjust width for smaller screens
+        onSubmit={submitHandler}
+      >
         <div>
           <p className="text-2xl font-bold">Blog Title</p>
           <input
@@ -71,7 +74,7 @@ const AddBlog = () => {
             onChange={onChangeHandler}
             type="text"
             placeholder="Add Your Title..."
-            className="py-2 px-4 border-2 border-slate-300 w-[500px]"
+            className="py-2 px-4 border-2 border-slate-300 w-full" // Full width on small screens
           />
         </div>
         <div>
@@ -81,7 +84,7 @@ const AddBlog = () => {
             name="description"
             onChange={onChangeHandler}
             placeholder="Add Your Content..."
-            className="py-2 px-4 border-2 border-slate-300 w-[500px]"
+            className="py-2 px-4 border-2 border-slate-300 w-full" // Full width on small screens
             rows={8}
           />
         </div>
@@ -89,7 +92,7 @@ const AddBlog = () => {
           <p className="text-2xl font-bold">Upload Blog Image</p>
           <label htmlFor="blogImage" className="cursor-pointer">
             <Image
-              className="mt-4 object-cover object-center w-24 dark:invert  dark:border-4 border-gray-400"
+              className="mt-4 object-cover object-center w-24 dark:invert dark:border-4 border-gray-400"
               width={270}
               height={70}
               alt="Upload Area"
@@ -112,7 +115,7 @@ const AddBlog = () => {
             value={data.postCategory}
             onChange={onChangeHandler}
             name="postCategory"
-            className="w-60 px-4 py-4 border-2 border-gray-300 text-gray-500 font-[600]"
+            className="w-full px-4 py-4 border-2 border-gray-300 text-gray-500 font-[600]"
           >
             <option value="Web Development">Web Development</option>
             <option value="App Development">App Development</option>
@@ -125,9 +128,9 @@ const AddBlog = () => {
             value={data.author}
             onChange={onChangeHandler}
             name="author"
-            className="w-60 px-4 py-4 border-2 border-gray-300 text-gray-500 font-[600]"
+            className="w-full px-4 py-4 border-2 border-gray-300 text-gray-500 font-[600]"
           >
-            <option value=">John Doe">John Doe</option>
+            <option value="John Doe">John Doe</option>
             <option value="Mr.Smith">Mr.Smith</option>
             <option value="Helena Lim">Helena Lim</option>
           </select>

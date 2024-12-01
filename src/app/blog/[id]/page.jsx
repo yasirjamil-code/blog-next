@@ -38,28 +38,32 @@ const BlogData = ({ params }) => {
   }, []);
 
   if (!data) {
-    return <Loading/>;
+    return <Loading />;
   }
 
   return (
-    <div className=" flex justify-between ml-[70px] w-full max-w-6xl gap-4 mt-8">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 flex flex-col md:flex-row gap-8">
       {/* Left Side: Blog Content */}
-      <div className="flex-1 flex flex-col gap-4">
+      <div className="flex-1 flex flex-col gap-6">
         <div className="title text-center">
-          <h1 className="font-bold text-3xl capitalize">{data.title}</h1>
+          <h1 className="font-bold text-3xl md:text-4xl capitalize">{data.title}</h1>
         </div>
-        <div className="blogImage w-full h-[400px] relative overflow-hidden">
+
+        {/* Blog Image */}
+        <div className="w-full relative h-[400px] sm:h-[500px] lg:h-[600px] overflow-hidden rounded-lg shadow-md">
           <Image
             src={data.blogImage}
             alt={data.title}
             layout="fill"
             objectFit="cover"
-            sizes="(max-width: 768px) 100vw, 50vw" // Adjust based on your layout
-            priority // Add priority for LCP
+            sizes="(max-width: 768px) 100vw, 50vw"
+            priority
             className="object-cover"
           />
         </div>
-        <div className="authorimage mx-auto">
+
+        {/* Author Info */}
+        <div className="flex items-center justify-center gap-3">
           <Image
             src={
               data.author === "John Doe"
@@ -73,32 +77,38 @@ const BlogData = ({ params }) => {
             alt="Author"
             width={50}
             height={50}
-            style={{ width: "auto", height: "auto" }} // Maintain aspect ratio
-            className="ml-2 rounded-full flex"
+            className="rounded-full"
           />
-          <span>{data.author}</span>
+          <span className="font-semibold">{data.author}</span>
         </div>
-        <div className="description text-lg flex flex-col gap-2">
-          <p
-            dangerouslySetInnerHTML={{ __html: data.description }}
-            className="blog-description"
-          >
-            {/* {data.description} */}
-          </p>
+
+        {/* Blog Description */}
+        <div className="description text-lg">
+          <p dangerouslySetInnerHTML={{ __html: data.description }} />
         </div>
       </div>
 
-      {/* Right Side: Recent Posts Title */}
-      <div className="w-[35%] p-4 ">
-        <h2 className="font-bold text-2xl text-center">Recent Posts</h2>
+      {/* Right Side: Recent Posts */}
+      <div className="w-full md:w-[35%] p-4 bg-white dark:bg-[#1c1c1c] rounded-lg shadow-md">
+        <h2 className="font-bold text-2xl text-center mb-4">Recent Posts</h2>
         {recentPosts.reverse().slice(0, 6).map((post) => (
           <div
-            className="px-4 py-2 dark:border dark:hover:bg-[#1b1b1b] hover:bg-[#c7c7c787] transition-colors duration-200   mt-2 rounded-xl cursor-pointer shadow-xl"
             key={post._id}
+            className="px-4 py-2 dark:border dark:border-gray-800 hover:bg-[#f7f7f7] dark:hover:bg-[#333333] transition-colors duration-300 rounded-lg mb-4 cursor-pointer shadow-sm"
           >
-            <Link  href={`/blog/${post._id}`} className="flex  dark:hover:bg-[#1b1b1b] transition-all">
-              <h2>{post.title}</h2>
-              <Image src={post.blogImage} width={100} height={100} alt="" />
+            <Link href={`/blog/${post._id}`} className="flex gap-4 items-center">
+              <div className="w-2/3">
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">{post.title}</h3>
+              </div>
+              <div className="w-1/3">
+                <Image
+                  src={post.blogImage}
+                  alt={post.title}
+                  width={100}
+                  height={100}
+                  className="rounded-md"
+                />
+              </div>
             </Link>
           </div>
         ))}
