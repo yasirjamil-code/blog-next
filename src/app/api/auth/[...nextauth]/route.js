@@ -3,7 +3,6 @@ import GoogleProvider from "next-auth/providers/google";
 import GithubProvider from "next-auth/providers/github";
 import { ConnectDB } from "../../../../../lib/config/database";
 import User from "../../../../../lib/models/Users";
-import Credentials from "next-auth/providers/credentials";
 
 export const handler = NextAuth({
   providers: [

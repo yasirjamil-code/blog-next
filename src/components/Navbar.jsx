@@ -31,9 +31,9 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="sticky top-0 z-[1000] bg-[#1F2937] dark:bg-[#0F0F0F] text-white dark:border-b shadow-lg flex items-center justify-between py-3 px-10">
+    <nav className="sticky top-0 z-[1000] bg-[#1F2937] dark:bg-[#0F0F0F] text-white dark:border-b shadow-lg flex items-center justify-between lg:justify-between py-3 px-10">
       {/* Logo Section */}
-      <div className="logo flex items-center">
+      <div className="logo flex w-[350px] items-center">
         <Link href={"/"}>
           <Image
             src={theme === "dark" ? "/logolight.png" : "/logo.png"}
@@ -110,13 +110,10 @@ const Navbar = () => {
         {/* Profile Dropdown for Logged-in Users */}
         {session && (
           <div className="relative">
-            <div
-              className="p-1 rounded-full cursor-pointer flex gap-4"
-              
-            >
+            <div className="p-1 rounded-full cursor-pointer flex gap-4">
               <div className="w-2 h-2 absolute left-5 top-5 rounded-full bg-green-700"></div>
               <Image
-              onClick={() => setOpen((prev) => !prev)}
+                onClick={() => setOpen((prev) => !prev)}
                 src={session.user.image || "logo.png"}
                 width={30}
                 height={30}
@@ -124,12 +121,6 @@ const Navbar = () => {
                 className="rounded-full"
               />
               {/* Mobile Menu Button */}
-              <button
-                className="sm:hidden flex items-center"
-                onClick={handleMobileMenuToggle}
-              >
-                <Image src="/menu.svg" width={30} height={30} alt="Menu" />
-              </button>
             </div>
             {open && (
               <div
@@ -165,7 +156,12 @@ const Navbar = () => {
               </Link>
             ))}
             {status === "authenticated" ? (
-              <button onClick={signOut} className="block ml-[69px] py-2 text-center text-black capitalize">Sign out</button>
+              <button
+                onClick={signOut}
+                className="block ml-[69px] py-2 text-center text-black capitalize"
+              >
+                Sign out
+              </button>
             ) : (
               <Link
                 href={"/login"}
@@ -187,6 +183,12 @@ const Navbar = () => {
           </div>
         </div>
       )}
+      <button
+        className="sm:hidden flex ml-3 items-center"
+        onClick={handleMobileMenuToggle}
+      >
+        <Image src="/menu.svg" width={30} height={30} alt="Menu" />
+      </button>
     </nav>
   );
 };
