@@ -12,7 +12,7 @@ const skillsArray = [
   { title: "Node JS", img: "/icon-svg/nodejs.svg" },
   { title: "MongoDB", img: "/icon-svg/mongodb.svg" },
   { title: "NextAuth", img: "/icon-svg/nextauth.png" },
-  { title: "GitHub", img: "/icon-svg/github.png`" },
+  { title: "GitHub", img: "/github.png" },
 ];
 
 export default function Portfolio() {

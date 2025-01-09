@@ -31,11 +31,14 @@ const Navbar = () => {
   };
 
   const logOut = () => {
-    () => signOut();
+  const confirmed =  confirm("Are You want to logout");
+    if (confirmed) {
+      signOut();
+    }
   };
 
   return (
-    <nav className="sticky top-0 z-[1000] bg-[#1F2937] dark:bg-[#0F0F0F] text-white dark:border-b shadow-lg flex items-center justify-between lg:justify-between py-3 px-10">
+    <nav className="sticky top-0 z-[1000] bg-[#101215] dark:bg-[#0F0F0F] text-white dark:border-b shadow-lg flex items-center justify-between lg:justify-between py-3 px-10">
       {/* Logo Section */}
       <div className="logo flex w-[350px] items-center">
         <Link href={"/"}>
@@ -149,7 +152,7 @@ const Navbar = () => {
           className="sm:hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-center items-center"
           onClick={handleMobileMenuToggle}
         >
-          <div className="bg-white p-6 rounded-md w-2/3">
+          <div className="bg-white dark:bg-[#0F0F0F] p-6 rounded-md w-2/3">
             {navlinks.map(({ title, href, id }) => (
               <Link
                 key={id}
@@ -164,7 +167,7 @@ const Navbar = () => {
                 onClick={signOut}
                 className="block ml-[69px] py-2 text-center text-black capitalize"
               >
-                Sign out
+                Logout
               </button>
             ) : (
               <Link
@@ -174,8 +177,8 @@ const Navbar = () => {
                 Login
               </Link>
             )}
-            <div className="flex justify-center items-center mt-4">
-              <button className="rounded-full p-2" onClick={toggleTheme}>
+            <div className="flex justify-center items-center mt-4 ">
+              <button className="rounded-full p-2 dark:border-none" onClick={toggleTheme}>
                 <Image
                   src={theme === "dark" ? "/sun.png" : "/moon.png"}
                   width={30}
@@ -188,10 +191,10 @@ const Navbar = () => {
         </div>
       )}
       <button
-        className="sm:hidden flex ml-3 items-center"
+        className="sm:hidden flex ml-3 dark:border-none dark:hover:border-none items-center"
         onClick={handleMobileMenuToggle}
       >
-        <Image src="/menu.svg" width={30} height={30} alt="Menu" />
+        <Image className="dark:border-none border-none" src="/menu.svg" width={30} height={30} alt="Menu" />
       </button>
     </nav>
   );
