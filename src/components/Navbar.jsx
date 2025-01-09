@@ -30,6 +30,10 @@ const Navbar = () => {
     setMenuOpen((prev) => !prev);
   };
 
+  const logOut = () => {
+    () => signOut();
+  };
+
   return (
     <nav className="sticky top-0 z-[1000] bg-[#1F2937] dark:bg-[#0F0F0F] text-white dark:border-b shadow-lg flex items-center justify-between lg:justify-between py-3 px-10">
       {/* Logo Section */}
@@ -67,7 +71,7 @@ const Navbar = () => {
         {/* Theme Toggle */}
         <button
           onClick={toggleTheme}
-          className="rounded-full hidden md:block hover:scale-110 transition-all dark:hover:border-none"
+          className="rounded-full hidden md:block hover:scale-110 transition-all dark:hover:border-none dark:border-none"
         >
           <Image
             alt="Theme Toggle"
@@ -85,7 +89,7 @@ const Navbar = () => {
             </span>
             <button
               className="px-2 py-1 rounded-md font-bold bg-orange-900 text-white"
-              onClick={() => signOut()}
+              onClick={logOut}
             >
               Sign Out
             </button>
